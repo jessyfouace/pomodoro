@@ -1,83 +1,101 @@
 $(function(){
-  var i = 0;
-  var y = 0;
+  // Var for number of minut for rest and minut fox exercice
+  var numberRest = 0;
+  var numberExercice = 0;
+  // For time rest +
     $("#morerep").click(function(){
-      if (i <= 4) {
-        i++;
-        $("#repos").val(i);
+      if (numberRest <= 4) {
+        numberRest++;
+        $("#repos").val(numberRest);
       }
     });
+    // For time rest -
   $("#lessrep").click(function(){
-    if (i >= 1) {
-      i--;
-      $("#repos").val(i);
+    if (numberRest >= 1) {
+      numberRest--;
+      $("#repos").val(numberRest);
     }
   });
+  // For time exercice +
     $("#moretime").click(function(){
-      if (y <= 24) {
-        y++;
-        $("#minutes").val(y);
-        $("#timer").val(y + ":00");
+      if (numberExercice <= 24) {
+        numberExercice++;
+        $("#minutes").val(numberExercice);
+        $("#timer").val(numberExercice + ":00");
       }
     });
+    // For time exercice -
   $("#lesstime").click(function(){
-    if (y >= 1) {
-      y--;
-      $("#minutes").val(y);
-      $("#timer").val(y + ":00");
+    if (numberExercice >= 1) {
+      numberExercice--;
+      $("#minutes").val(numberExercice);
+      $("#timer").val(numberExercice + ":00");
     }
   });
+  // Timer second
   var sec = 0;
+  // Start function
   $("#start").click(function(){
+    // Set timer all 1 second (I won't use the timer of js)
     var timer = setInterval(startclick, 1000);
+    // Appear or dessappear
     $("#start").addClass("d-none");
     $("#pause").removeClass("d-none");
     $("#restart").removeClass("d-none");
-    var savey = y;
-    var savei = i;
+    // Save value of timer at start page
+    var savenumberExercice = numberExercice;
+    var savenumberRest = numberRest;
+    // Function for play
     function startclick(){
-      if (sec == 0 && y > -1) {
+      // timer for 0second
+      if (sec == 0 && numberExercice > -1) {
         sec = 59;
-        y--;
+        numberExercice--;
       }
-      if (y > -1) {
+      // Section for the exercice
+      if (numberExercice > -1) {
         $("#info").html("Exercice");
-        $("#timer").val(y + ":" + sec);
+        $("#timer").val(numberExercice + ":" + sec);
         sec--;
         $("#minutes").val("0");
+        // Just estetic
         if (sec < 10) {
-          $("#timer").val(y + ":" + "0" + sec);
+          $("#timer").val(numberExercice + ":" + "0" + sec);
         }
-        if (y == 0 && sec == 1) {
-          i = savei;
-          i--;
-          return i;
+        // Send value of rest
+        if (numberExercice == 0 && sec == 1) {
+          numberRest = savenumberRest;
+          numberRest--;
+          return numberRest;
         }
       }
-      if (y < 0) {
-        if (sec == 0 && i > -1) {
+      // Start rest
+      if (numberExercice < 0) {
+        if (sec == 0 && numberRest > -1) {
           sec = 59;
-          i--;
+          numberRest--;
         }
         $("#info").html("Repos");
-        $("#timer").val(i + ":" + sec);
+        $("#timer").val(numberRest + ":" + sec);
         sec--;
         $("#repos").val("0");
         if (sec < 10) {
-          $("#timer").val(i + ":" + "0" + sec);
+          $("#timer").val(numberRest + ":" + "0" + sec);
         }
-        if (i == 0 && sec == 1) {
-          y = savey;
-          return y;
+        if (numberRest == 0 && sec == 1) {
+          numberExercice = savenumberExercice;
+          return numberExercice;
         }
       }
     }
+    // Stop click
     $("#pause").click(function(){
       clearInterval(timer);
       $("#start").removeClass("d-none");
       $("#pause").addClass("d-none");
       $("#restart").addClass("d-none");
     });
+    // Restart click
     $("#restart").click(function(){
       clearInterval(timer);
       sec = 0;
