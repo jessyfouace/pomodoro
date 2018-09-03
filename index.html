@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+  <link href="/bootstrap4-glyphicons/css/bootstrap-glyphicons.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <div class="col-12 p-0">
+    <div class="col-4 col-md-2 col-lg-1 rounded-circle text-center mx-auto mt-5">
+      <input type="text" class="d-none" value="1"/>
+      <p id="info" class="pt-1"></p>
+      <input id="timer" type="text" class="text-center w-100 pb-2" value=""/>
+      <i id="start" class="fas fa-play pb-4"></i>
+      <i id="pause" class="fas fa-pause d-none"></i>
+      <i id="restart" class="fas fa-sync-alt d-none"></i>
+    </div>
+      <form class="col-5 p-0 text-center mx-auto mt-3">
+          <label for="repos" class="d-block">Durée Repos:</label>
+          <input class="d-none" type="text" value="0"/>
+            <input id="repos" class="d-block mx-auto" type="text" value="0"/>
+          <i id="morerep" class="fas fa-plus fa-2x pr-2"></i>
+          <i id="lessrep" class="fas fa-minus fa-2x"></i>
+      </form>
+      <form class="col-5 p-0 text-center mx-auto mt-3">
+          <label for="minutes" class="d-block">Durée minutes:</label>
+            <input id="minutes" class="d-block mx-auto" type="text" value="0"/>
+          <i id="moretime" class="fas fa-plus fa-2x pr-2"></i>
+          <i id="lesstime" class="fas fa-minus fa-2x"></i>
+      </form>
+  </div>
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
