@@ -36,6 +36,8 @@ $(function(){
   var sec = 0;
   // Start function
   $("#start").click(function(){
+    $("#addrepos").addClass("d-none");
+    $("#addexercice").addClass("d-none");
     // Set timer all 1 second (I won't use the timer of js)
     var timer = setInterval(startclick, 1000);
     // Appear or dessappear
@@ -99,6 +101,8 @@ $(function(){
     $("#restart").click(function(){
       clearInterval(timer);
       sec = 0;
+      $("#addrepos").removeClass("d-none");
+      $("#addexercice").removeClass("d-none");
       $("#repos").val("0");
       $("#timer").val("RESET");
       $("#start").removeClass("d-none");
